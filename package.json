@@ -1,0 +1,23 @@
+{
+  "name": "odixds",
+  "version": "1.0.0",
+  "description": "test for odix ds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdrianLachance/odixtest.git"
+  },
+  "keywords": [
+    "design",
+    "system"
+  ],
+  "author": "adrianlachance",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdrianLachance/odixtest/issues"
+  },
+  "homepage": "https://github.com/AdrianLachance/odixtest#readme"
+}
