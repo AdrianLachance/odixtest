@@ -1,0 +1,46 @@
+//ERROR MESSAGE
+$border: solid 1px rgba(white,.3);
+.error-message{
+  background: #15141B;
+  height: 70px;
+  width: 340px;
+  border-radius: 8px;
+  border: $border;
+  box-shadow: $dark-shadow;
+  color: $white-8;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  &__message{
+    width: 75%;
+    overflow-y: scroll;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  &__options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    border-left: $border;
+    button{
+      background: transparent;
+      cursor: pointer;
+      transition: $transition-1;
+      color: $white-8;
+      border: none;
+      flex: 1;
+      &:hover{
+        color: white;
+      }
+      &:nth-child(2){
+        border-top: $border;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+}

@@ -1,0 +1,80 @@
+// Primary Colors.
+
+$primary:   #007AFF;
+
+
+// Semaphore Colors.
+
+$success:   #00D647;
+$warning:   #FFC600;
+$danger:    #FF3D57;
+
+
+// Neutral Colors.
+
+$white-8:   rgba(#fff,.8);
+$white:     #fff !default;
+$gray-1:    #8893AB !default;
+$gray-2:    #4E586E !default;
+$gray-3:    #353845 !default;
+$gray-4:    #242835 !default;
+$gray-5:    #1F212A !default;
+$gray-6:    #202227 !default;
+$gray-7:    #131415 !default;
+$black:     #000 !default;
+
+
+//Gradient Colors.
+
+$menu-bg-dark:          linear-gradient(165deg, #1F202C 0%, #1B1B25 97%);
+$dropdown-bg-dark:      linear-gradient(180deg, #272b35 0%, #2b2f39 96%);
+$card-bg-dark:          linear-gradient(90deg, $gray-4 0%, $gray-5 100%);
+
+
+
+// Complementary Colors.
+
+$blue:      #0198F8 !default;
+$indigo:    #6610f2 !default;
+$purple:    #6f42c1 !default;
+$pink:      #e83e8c !default;
+$red:       #dc3545 !default;
+$orange:    #fd7e14 !default;
+$yellow:    #ffc107 !default;
+$green:     #28a745 !default;
+$teal:      #20c997 !default;
+$cyan:      #0198F8 !default;
+
+
+//Nav Background Color.
+
+$odix-nav-dark: linear-gradient(90deg, #15141B 18.79%, #1C1C26 41.84%, #1D1E29 62.72%, #191922 84.2%);
+// $light-bg:  ;
+
+
+//Background Theme Colors.
+
+$dark-bg:            radial-gradient(70% 70% at 55% 30%, #202231 0%, #18161C 100%);
+$light-bg:           linear-gradient(222deg, #F4F5F7 6%, #F3F4F6 76%);
+
+
+//Body Colors.
+
+$body-bg-dark:       $dark-bg !default;
+$body-color-dark:    $white-8 !default;
+
+$body-bg-light:      $light-bg;
+$body-color-light:   $gray-6;
+
+
+//Shadows
+
+$dark-shadow:       0 16px 16px 0 rgba(0,0,0,0.30);
+
+//Borders
+
+$radius-8:         8px;
+$radius-4:         4px;
+
+//Transitions
+$transition-1:     all .3s ease-in-out;

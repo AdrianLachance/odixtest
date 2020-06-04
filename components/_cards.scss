@@ -1,0 +1,266 @@
+// --- CARDS -- \\
+
+@mixin kpiCard {
+  .kpi-card{
+    min-width: 261px;
+    max-width: 261px;
+    height: 370px;
+    color: $white-8;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+    &__container{
+      background: $card-bg-dark;
+      border-radius: 8px;
+      box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.3);
+      padding: 15px 10px;
+      height: 100%;
+      position: relative;
+      transition: all .3s ease-in-out;
+      &--plant{
+        font-weight: $bold;
+        a{
+          position: relative;
+          &:hover:after{
+            width: 100%;
+          }
+          &::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+      &--processContainer{
+        margin: 10px 0;
+        width: 100%;
+        .kpiProcess{
+          border-bottom: dotted 1px rgba($white-8,.2);
+          padding: 6px 5px;
+          @include horizontalCenter();
+          .process{
+            display: flex;
+            align-items: center;
+            width: 70%;
+            .kpiStatus{
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              border-radius: 100px;
+              margin: 0 5px 0 0 ;
+            }
+            .status-danger{
+              background-color: $red;
+              box-shadow: 0px 0px 8px rgba($red,.4);
+            }
+            .status-success{
+              background-color: $success;
+              box-shadow: 0px 0px 8px rgba($success,.4);
+            }
+            .status-warning{
+              background-color: $warning;
+              box-shadow: 0px 0px 8px rgba($warning,.4);
+            }
+            // .noStatus{
+            //   background-color: $gray-7;
+            //   box-shadow: 0px 0px 8px rgba(#1b1b21,.4);
+            // }
+          }
+          .oee{
+            font-size: 12px;
+            color: $gray-1;
+            margin: 0 10px 0 0;
+          }
+          .kpiResult{
+            font-weight: $bold;
+            color: white;
+          }
+        }
+      }
+      &--info{
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        border-radius: 100px;
+        background-color: rgba(#0099FF,.15);
+        width: 22px;
+        height: 22px;
+        text-align: center;
+        font-weight: 800;
+        cursor: pointer;
+        // opacity: .6;
+        transition: all .3s ease-in-out;
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+    .directLink{
+      color: $cyan;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      transition: all .3s ease-in-out;
+      a{
+        &:hover:after{
+          width: 100%;
+        }
+        &::after{
+          content: '';
+          width: 0%;
+          height: 1px;
+          background: $cyan;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+    .processLink{
+      position: relative;
+      transition: all .3s ease-in-out;
+      a{
+        &:hover:after{
+          width: 100%;
+        }
+        &::after{
+          content: '';
+          width: 0%;
+          height: 1px;
+          background: white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+    &:hover{
+      transform: translateY(-.5px);
+      color: white;
+      box-shadow:  0px 16px 16px rgba(0, 0, 0, 0.6);
+    }
+    .medium-size{
+      font-size: 14px;
+    }
+  }
+  .danger{
+    .statusBar{
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: solid 8px $red;
+      border-radius: 8px;
+      height: 30px;
+      width: 100%;
+    }
+  }
+}
+
+@mixin kpiCardSingle(){
+  .kpi-card-single{
+    min-width: 251px; @include for-size(desktop-up) { min-width: 251px;}
+    height: 157px;
+    color: $white-8;
+    font-size: 16px;
+    &__container{
+      background: $card-bg-dark;
+      border-radius: 8px;
+      box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.3);
+      padding: 15px 10px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      &--oee{
+        width: 100%;
+        text-align: left;
+        font-weight: $normal;
+      }
+      &--info{
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        border-radius: 100px;
+        background-color: rgba(#0099FF,.15);
+        width: 22px;
+        height: 22px;
+        text-align: center;
+        font-weight: 800;
+        cursor: pointer;
+        // opacity: .6;
+        transition: all .3s ease-in-out;
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &--value{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: $normal;
+        .statusBall{
+          border-radius: 100px;
+          width: 16px;
+          height: 16px;
+          margin: 0 10px 0 0;
+        }
+      }
+      &--target{
+        opacity: .7;
+        text-align: center;
+      }
+      &--call2action{
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        span{
+          color: $cyan;
+          transition: all .3s ease-in-out;
+          font-size: 14px;
+          letter-spacing: 1px;
+          cursor: pointer;
+          &:hover{
+            bottom: 7px;
+            box-shadow: $dark-shadow;
+          }
+        }
+      }
+    } 
+  }
+  .danger{
+    .kpi-card-single__container{
+      border-top: solid 4px $danger;
+    }
+    .statusBall{
+      background-color: $danger;
+    }
+  }
+  .warning{
+    .statusBall{
+      background-color: $warning;
+    }
+  }
+  .success{
+    .statusBall{
+      background-color: $success;
+    }
+  }
+}
+
+@mixin darkCard {
+  .dark-container{
+    background: $card-bg-dark;
+    padding: 24px;
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    height: 100%;
+    position: relative;
+  }
+}

@@ -1,0 +1,40 @@
+  //TOOLTIP
+  @mixin toolTipOdix {
+    $tooltip: rgba(#0E1115,.9);
+    .odixTooltip {
+      position: absolute;
+      .odixTooltiptext {
+          width: 230px;
+          background-color: $tooltip;
+          text-align: left;
+          color: $white-8;
+          border-radius: 4px;
+          padding: 5px;
+          position: absolute;
+          z-index: 1;
+          bottom: 135%;
+          right: -170%;
+          margin-left: -60px;
+          font-weight: $light;
+          box-shadow: $dark-shadow;
+          b{
+            font-weight: $bold;
+          }
+          p{
+            span{
+              color: rgba(white,.5);
+            }
+          }
+          &::after{
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 78.5%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: $tooltip transparent transparent transparent;
+          }
+        }
+    }
+  }

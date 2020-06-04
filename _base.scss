@@ -1,0 +1,178 @@
+//Typography
+// Fonts.
+::selection {
+  color: $white-8;
+  background: #04ABDC;
+}
+$font-sans-serif:      "Open Sans", Arial, sans-serif;
+$odix-font-family:     $font-sans-serif !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$light:                       400 !default;
+$normal:                      600 !default;
+$bold:                        700 !default;
+$extrabold:                   800 !default;
+
+
+$font-weight-base:            $normal !default;
+$line-height-base:            1.5 !default;
+
+$h1-font-size:                $font-size-base * 3.3 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+// $headings-margin-bottom:      ($spacer / 2) !default;
+$headings-font-family:        inherit !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              inherit !default;
+
+$transition: all .3s ease-in-out;
+
+h1{
+  font-size: $h1-font-size;
+  margin: 0;
+  font-weight: $normal;
+}
+
+h2{
+  font-size: $h2-font-size;
+  margin: 0;
+}
+
+h3 {
+  font-size:30px;
+  margin: 0;
+}
+
+h4{
+	font-size:24px;
+  text-transform:capitalize;
+  margin: 0;
+}
+
+h5{
+	font-size:18px;
+  text-transform:capitalize;
+  margin: 0;
+}
+
+h6{
+	font-size:16px;
+  // text-transform:capitalize;
+  margin: 0;
+}
+
+p{
+  font-size:14px;
+  margin: 0;
+}
+
+dt{
+  font-weight: 100;
+  margin: 0;
+}
+
+.caption{
+  margin: 4px 0;
+  a{
+      color: $gray-1;
+      font-size: 14px;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-flex;
+      &::after{
+        content: '';
+        width: 0%;
+        height: 1px;
+        background: $gray-1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all .3s ease-in-out;
+      }
+      &:hover{
+        color: $white-8;
+        &:after{
+          width: 100%;
+          background: $white-8;
+        }
+      }
+  }
+}
+
+.breadCrumbArrow{
+  width: 8px;
+  height: 8px;
+  border-top: solid 1px $gray-1;
+  border-right: solid 1px $gray-1;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin: 0 11px;
+}
+
+
+
+$font-size-large:                             1.5rem !default;
+$font-size-small:                             0.9rem !default;
+
+// Reponsive Headings
+$responsive-headings                         : () !default;
+$responsive-headings                         : map-merge((
+  "xs"                                       : (
+    "h1"                                     : 150%,
+    "h2"                                     : 145%,
+    "h3"                                     : 135%,
+    "h4"                                     : 135%,
+    "h5"                                     : 135%
+  ),
+  "sm"                                       : (
+    "h1"                                     : 170%,
+    "h2"                                     : 140%,
+    "h3"                                     : 125%,
+    "h4"                                     : 125%,
+    "h5"                                     : 125%
+  ),
+  "md"                                       : (
+    "h1"                                     : 200%,
+    "h2"                                     : 170%,
+    "h3"                                     : 140%,
+    "h4"                                     : 125%,
+    "h5"                                     : 125%
+  ),
+  "lg"                                       : (
+    "h1"                                     : 200%,
+    "h2"                                     : 170%,
+    "h3"                                     : 140%,
+    "h4"                                     : 125%,
+    "h5"                                     : 125%
+  ),
+  "xl"                                       : (
+    "h1"                                     : 250%,
+    "h2"                                     : 200%,
+    "h3"                                     : 170%,
+    "h4"                                     : 140%,
+    "h5"                                     : 125%
+  ),
+), $responsive-headings);
+
+
+.subtitle-hr{
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  & > *{
+    font-weight: $normal;
+  }
+  hr{
+      background: rgba(white,.1);
+      flex: 1;
+      margin: 0 10px;
+  }
+}

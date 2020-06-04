@@ -1,0 +1,20 @@
+@mixin centerAbso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin horizontalCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+@mixin gradientText(){
+    &:hover{
+        -webkit-text-fill-color: transparent;
+        background:linear-gradient(to right,#ff8a00,#e52e71);
+        background-clip: text;
+    }
+}
