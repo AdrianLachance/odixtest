@@ -1,0 +1,261 @@
+@import '../variables';
+
+.welding-gas{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // grid-template-columns: repeat(auto-fit, (minmax(200px, 1fr)));
+    grid-template-rows: max-content repeat(7, minmax(min-content,max-content));
+    padding: 16px;
+    column-gap: 23px;
+    row-gap: 16px;
+    align-items: center;
+    .h2-heading{
+        grid-column: 1 / 4;
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .update-status{
+        grid-column: 4 / -1;
+        justify-self: end;
+    }
+    &__small-cont{
+        @extend .wg-container-1;
+        .heading-6{
+            grid-column: 1 / -1;
+            padding: 0 0 0 16px;
+        }
+        hr{
+            grid-column: 1 / -1;
+        }
+        .flow{
+            font-size: 14px;
+            padding: 0 0 0 16px;
+        }
+    }
+    &__vertical-cont{
+        grid-column: 1 / 2;
+        grid-row: 3 / span 4;
+        height: 100%;
+        border: 1px solid $gray-3-1;
+        border-radius: 4px;
+        align-self: start;
+
+        display: flex;
+        flex-direction: column;
+
+        &--tanks{
+            @extend .basic-container;
+            margin: 12px 8px;
+            padding: 9px 0;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            row-gap: 8px;
+
+
+            .gas-tank{
+                font-size: 14px;
+                grid-column: 1 / -1;
+                border-top: solid 1px $gray-3-1;
+                padding: 9px 16px;
+
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                row-gap: 4px;
+
+                .tank-title{
+                    font-weight: bold;
+                    grid-column: 1 / -1;
+                }
+                .level-graphic{
+                    margin: 0 8px;
+                }
+                .level-value{
+                    @extend .value-kgmin;
+                    align-self: end;
+                }
+                .level-psi{
+                    @extend .level-value;
+                    grid-column: 3;
+                }
+            }
+
+            .value-kgmin{
+                justify-self: end;
+            }
+        }
+    }
+    &__graph-cont{
+        grid-column: 2 / -1;
+        align-self: start;
+        @extend .basic-container;
+
+        display: grid;
+        grid-template-columns: 1fr 2.2fr;
+        grid-row: 3 / span 4;
+        height: 95%;
+
+        &--flow{
+            padding: 16px 0 16px 16px;
+        }
+        &--tendencies{
+            background-color: $gray-3-2;
+            padding: 16px 16px 40px 40px;
+            display: grid;
+            grid-template-columns: minmax(max-content,140px) repeat(2,minmax(max-content, 60px)) repeat(2,minmax(max-content, 40px)) 1fr;
+            grid-template-rows: .11fr 1fr;
+            position: relative;
+            align-items: baseline;
+            div[class*="axis"] {
+                position: absolute;
+                font-weight: bold;
+                color: #bbbbbe;
+                font-size: 14px;
+              }
+            .y-axis{
+                transform: rotate(-90deg);
+                top: 50%;
+                left: -2px;
+            }
+            .x-axis{
+                bottom: 10px;
+                left: 50%;
+            }
+        }
+    }
+}
+
+.wg-container-1{
+    @extend .basic-container;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    padding: 8px 0;
+    row-gap: 8px;
+}
+
+
+.basic-container{
+    border-radius: 4px;
+    background-color: $gray-6-1;
+}
+
+.heading-6{
+    color: #DDDDDE;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+hr{
+    margin: 0;
+    border-color: $gray-3-1;
+}
+
+
+
+.mrg-8{
+    margin: 8px;
+}
+
+.pad-0-8{
+    padding: 8px;
+}
+
+
+//TANK CUSTOM GRAPHIC
+.level-graphic{
+    border: solid 1px $gray-3-1;
+    border-radius: 2px;
+    &__status{
+        height: 100%;
+        border-radius: 1px;
+        max-width: 100%;
+        transition: all .4s ease;
+    }
+    .critic{
+        background-color: rgba($danger,.6);
+        border: solid 1px rgba(#FF1351,.6);
+    }
+    .average{
+        background-color: rgba($warning,.6);
+        border: solid 1px rgba($warning,.8);
+    }
+    .optimal{
+        background-color: rgba($success,.6);
+        border: solid 1px rgba($success,.8);
+    }
+}
+
+// KG/MIN VALUES
+.value-kgmin{
+    font-size: 14px;
+    color: $gray-1-1;
+}
+
+.critic-kgmin{
+    position: relative;
+    z-index: 2;
+    color: $danger;
+    &::after{
+        content: '';
+        height: 120%;
+        background-color: #34212E;
+        width: 116%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        border-radius: 12px;
+    }
+}
+
+//TABLE
+
+.welding-gas-table{
+    width: 100%;
+    margin: 20px 0 0 0;
+    tr{
+        cursor: pointer;
+        transition: all .3s ease;
+        th{
+            font-weight: 600;
+            border-bottom: solid 2px $gray-1-1;
+        }
+        td{
+            color: $gray-1-1;
+        }
+        td,th{
+            &:not(:first-child){
+                text-align: center;
+            }
+            &:last-child{
+                text-align: right;
+                padding: 4px 16px 4px 8px;
+            }
+            font-size: 14px;
+            padding: 4px 0 8px 4px;
+        }
+        &:hover{
+            background-color: rgba($gray-3-2,.4);
+        }
+    }
+    .selected-row{
+        background-color: $gray-3-2;
+        font-weight: bold;
+        border-radius: 4px;
+        &:hover{
+            background-color: $gray-3-2;
+        }
+    }
+}
+
+#liveData{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/ -1;
+    //Hides AmCharts Logo
+    ::ng-deepg[filter^="url"]{
+        display: none;
+    }
+}
