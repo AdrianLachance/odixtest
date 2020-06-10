@@ -1,6 +1,6 @@
 {
   "name": "odixds",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ODIX Design System",
   "main": "index.js",
   "scripts": {
