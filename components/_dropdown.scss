@@ -105,7 +105,7 @@
           .selected{
             font-weight: 700 !important;
             position: relative;
-            /deep/.checkMark{
+            ::ng-deep.checkMark{
               position: absolute;
               top: 46%;
               right: 8px;

@@ -35,6 +35,14 @@ $headings-color:              inherit !default;
 
 $transition: all .3s ease-in-out;
 
+body{
+  background: $dark-bg;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: $white-8;
+}
+
 h1{
   font-size: $h1-font-size;
   margin: 0;

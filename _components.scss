@@ -6,7 +6,7 @@
 @import 'components/tooltip';
 
 //Global component styles
-/deep/error-message{
+::ng-deeperror-message{
     position: fixed;
     top: 70px;
     right: 35px;
